@@ -1,25 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import { Theme, ThemePanel } from "@radix-ui/themes";
+import { Flex, Text, Button } from "@radix-ui/themes";
+import { BaseButton } from '@radix-ui/themes/components/_internal/base-button';
+import Header from './header';
+import ScoreboardList from './homeScoreboardList';
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div>
+		<Header />
+		<ScoreboardList />
+		</div>
+	);
 }
 
 export default App;
