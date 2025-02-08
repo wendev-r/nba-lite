@@ -12,8 +12,10 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import Link from '@mui/material/Link';
 
-const pages = ['Schedule', 'Stats', 'About'];
+
+const pages = ['Full Schedule', 'Stats', 'About'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 
@@ -91,6 +93,7 @@ export default function Header() {
                             {pages.map((page) => (
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                                     <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -116,6 +119,7 @@ export default function Header() {
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
+                            <Link href={"/"+page.toLowerCase()}>
                             <Button
                                 key={page}
                                 onClick={handleCloseNavMenu}
@@ -123,6 +127,7 @@ export default function Header() {
                             >
                                 {page}
                             </Button>
+                            </Link>
                         ))}
                     </Box>
                     <Box sx={{ flexGrow: 0 }}>
