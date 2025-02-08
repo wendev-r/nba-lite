@@ -1,19 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Theme, ThemePanel } from "@radix-ui/themes";
 import { Flex, Text, Button } from "@radix-ui/themes";
 import { BaseButton } from '@radix-ui/themes/components/_internal/base-button';
 import Header from './header';
+import FullSchedule from './fullschedulepage';
 import ScoreboardList from './homeScoreboardList';
 
 
 
 function App() {
 	return (
-		<div>
-		<Header />
-		<ScoreboardList />
-		</div>
+		<BrowserRouter>
+
+			<div>
+				<Header />
+				<Routes>
+
+					<Route index element={<ScoreboardList />} />
+					<Route path="/full%20schedule" element={<FullSchedule />} />
+
+				</Routes >
+			</div>
+		</BrowserRouter>
+
 	);
 }
 
