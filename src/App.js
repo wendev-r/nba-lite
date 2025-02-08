@@ -4,9 +4,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Theme, ThemePanel } from "@radix-ui/themes";
 import { Flex, Text, Button } from "@radix-ui/themes";
 import { BaseButton } from '@radix-ui/themes/components/_internal/base-button';
-import Header from './header';
-import FullSchedule from './fullschedulepage';
-import ScoreboardList from './homeScoreboardList';
+import Header from './Components/header';
+import FullSchedule from './Components/fullschedulepage';
+import ScoreboardList from './Components/homeScoreboardList';
 
 
 
