@@ -24,6 +24,10 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 export default function Header() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
+    const pageNoSpace = [];
+    for (let i = 0; i < pages.length; i++) {
+        pageNoSpace.push(pages[i].replace(' ', ''));
+    }
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -49,7 +53,7 @@ export default function Header() {
                         variant="h6"
                         noWrap
                         component="a"
-                        href="#app-bar-with-responsive-menu"
+                        href="/"
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
@@ -103,7 +107,7 @@ export default function Header() {
                         variant="h5"
                         noWrap
                         component="a"
-                        href="#app-bar-with-responsive-menu"
+                        href="/"
                         sx={{
                             mr: 2,
                             display: { xs: 'flex', md: 'none' },
@@ -118,15 +122,15 @@ export default function Header() {
                         LOGO
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
-                            <Link href={"/"+page.toLowerCase()}>
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
-                            >
-                                {page}
-                            </Button>
+                        {pageNoSpace.map((pageNoSpace, index) => (
+                            <Link href={"/" + pageNoSpace.toLowerCase()}>
+                                <Button
+                                    key={pageNoSpace}
+                                    onClick={handleCloseNavMenu}
+                                    sx={{ my: 2, color: 'white', display: 'block' }}
+                                >
+                                    {pages[index]}
+                                </Button>
                             </Link>
                         ))}
                     </Box>

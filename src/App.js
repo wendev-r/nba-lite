@@ -18,8 +18,11 @@ function App() {
 				<Header />
 				<Routes>
 
-					<Route index element={<ScoreboardList />} />
-					<Route path="/full%20schedule" element={<FullSchedule />} />
+					<Route index element={<ScoreboardList />} />\
+					<Route path="/fullschedule" element={<FullSchedule />} />
+					{/* <Route path="/full%20schedule" element={<BasicDateCalendar />} /> */}
+			
+
 
 				</Routes >
 			</div>

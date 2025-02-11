@@ -1,9 +1,11 @@
 import React from "react";
+import BasicDateCalendar from "./calender";
 
 const FullSchedule = () => {
+    console.log("Full Schedule Page");
     return (
         <div>
-            <h1>HI</h1>
+            <BasicDateCalendar />
         </div>
     );
 };
